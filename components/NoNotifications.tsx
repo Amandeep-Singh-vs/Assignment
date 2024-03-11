@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     color:'#454545',
   },
   txtLight:{
-    fontFamily:'Quicksand-Light',
+    fontFamily:'Quicksand-Medium',
     fontWeight:'500',
     textAlign:'center',
     fontSize:16,

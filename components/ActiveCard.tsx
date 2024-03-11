@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
     },
     txt:{
-        fontFamily:'Fraunces_9pt-Bold',
+        fontFamily:'Fraunces_72pt-Bold',
         fontWeight:'700',
         fontSize:18,
         textAlign:'center',
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     },
     btntxt:{
         color:'#292F36',
-        fontFamily:'Quicksand-Light',
+        fontFamily:'Quicksand-SemiBold',
         fontWeight:'600',
         fontSize:12,
         marginHorizontal:32,

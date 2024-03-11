@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   txt:{
     flex:1,
     marginRight:8,
-    fontFamily:'Quicksand-Light',
+    fontFamily:'Quicksand-Medium',
     color:'#000000',
     fontWeight:'500',
     fontSize:14,

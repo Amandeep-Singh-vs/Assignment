@@ -24,7 +24,7 @@ const Notifications = () => {
   return (
     <View style={{flex:1,marginTop:16}}>
       {
-        notifyData.length?(
+        !notifyData.length?(
           <FlatList scrollEnabled data={notifyData} renderItem={renderItem}/>
         ):(
           <NoNotifications />
