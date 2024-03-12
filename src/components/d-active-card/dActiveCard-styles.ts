@@ -1,15 +1,18 @@
+// libraries
 import { StyleSheet } from "react-native";
 
-import { BORDERRADIUS, FONTSIZE } from "../../theme/typography";
+// theme
+import { BORDERRADIUS, FONTFAMILY, FONTSIZE } from "../../theme/typography";
 import { COLORS } from "../../theme/color";
+import { SPACING } from "../../theme/spacing";
 
 export const styles = StyleSheet.create({
     container:{
         flex:1,
         flexDirection:'column',
         justifyContent:"center",
-        marginBottom:20,
-        backgroundColor:COLORS.bgcolor1,
+        marginBottom:SPACING.space_20,
+        backgroundColor:COLORS.neutralWhite,
     },
     background:{
         borderRadius:BORDERRADIUS.radius_8,
@@ -19,11 +22,11 @@ export const styles = StyleSheet.create({
         alignItems:'center',
     },
     txt:{
-        fontFamily:'Fraunces_72pt-Regular',
+        fontFamily:FONTFAMILY.FrauncesBold,
         fontWeight:'700',
         fontSize:FONTSIZE.fsize_18,
         textAlign:'center',
-        marginVertical:8,
+        marginVertical:SPACING.space_8,
     },
     btncontainer:{
         flexDirection:'row',
@@ -31,17 +34,16 @@ export const styles = StyleSheet.create({
         gap:12
     },
     btn:{
-        marginVertical:12,
-        backgroundColor:COLORS.bgcolor1,
+        marginVertical:SPACING.space_12,
+        backgroundColor:COLORS.neutralWhite,
         borderRadius:BORDERRADIUS.radius_8,
         elevation:3
     },
     btntxt:{
-        color:COLORS.color1,
-        fontFamily:'Quicksand-SemiBold',
-        fontWeight:'600',
+        color:COLORS.neutral700,
+        fontFamily:FONTFAMILY.QuicksandSemiBold,
         fontSize:FONTSIZE.fsize_12,
-        marginHorizontal:32,
-        marginVertical:14,
+        marginHorizontal:SPACING.space_32,
+        marginVertical:SPACING.space_14,
     }
 })

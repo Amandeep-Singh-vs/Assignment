@@ -14,16 +14,16 @@ import DActiveChallenges from './src/screens/d-active-challenges/DActiveChalleng
 // common constant
 import { Notification,dActive } from './src/constants/screenChanger-constants';
 
-// Styles
+// theme
 import {styles} from './src/theme/styles'
 import { COLORS } from './src/theme/color';
 
 /** App: {This function shows Navbar and the screens according to state value.} */
 function App(): React.JSX.Element {
-  const [screen,setScreen] = useState(false);
+  const [screen,setScreen] = useState(true);
   return (
     <View style={styles.mainContainer}>
-      <StatusBar backgroundColor={COLORS.bgcolor1} barStyle={'dark-content'} />
+      <StatusBar backgroundColor={COLORS.neutralWhite} barStyle={'dark-content'} />
       <TopNav title={`${screen?Notification:dActive}`}/>
       {
         screen ? <Notifications/> : <DActiveChallenges/>

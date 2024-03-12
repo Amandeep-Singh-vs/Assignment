@@ -1,26 +1,22 @@
 // libraries
 import React from 'react'
-import {ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import {ImageBackground, Text, TouchableOpacity, View } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient';
-
-// assets
-const outerRing = require('../../assets/images/outerRing.png');
-const focus = require('../../assets/images/focus.png');
-const scan = require('../../assets/images/scan.png');
-const square = require('../../assets/images/square.png');
-const follow = require('../../assets/images/follow.png');
-const noChallenge = require('../../assets/images/noChallenge.png')
 
 // Styles
 import {styles} from './dActiveCard-styles';
-import { GRADIENTCOLORS } from '../../theme/color';
 
 // interface
 import { Challenge } from '../../screens/d-active-challenges/DActiveChallenges';
 
-/** ActiveCard: {This function shows active cards according to the data given.} */
-const ActiveCard = ({data}:{data:Challenge}) => {
-    const buttonsData = ['2min', '4min', '8min']
+// theme
+import { SPACING } from '../../theme/spacing';
+
+// constants
+import { GRADIENTCOLORS,buttonsData,outerRing,focus,scan,square,follow,noChallenge } from '../../constants/dActivechallenges-constants';
+
+/** DActiveCard: {This function shows active cards according to the data given.} */
+const DActiveCard = ({data}:{data:Challenge}) => {
     let imageName = noChallenge;
     /** getImage: {This function returns the background image according to the name of challenge.} */
     const getImage=(name:string)=>{
@@ -51,7 +47,7 @@ const ActiveCard = ({data}:{data:Challenge}) => {
                     <Text style={[styles.txt,{color:data.color}]}>{data.name}</Text>
                 </View>
             </LinearGradient>
-            <LinearGradient colors={GRADIENTCOLORS.gdcolor2} locations={[0, 0.5]} style={{marginTop:47}}>
+            <LinearGradient colors={GRADIENTCOLORS.gdcolor2} locations={[0, 0.5]} style={{marginTop:SPACING.space_47}}>
                 <View style={styles.btncontainer}>
                     {
                         buttonsData.map((item,index)=>
@@ -67,4 +63,4 @@ const ActiveCard = ({data}:{data:Challenge}) => {
   )
 }
 
-export default ActiveCard
+export default DActiveCard

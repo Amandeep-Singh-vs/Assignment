@@ -1,0 +1,18 @@
+export const SPACING = {
+    space_4 : 4,
+    space_8 : 8,
+    space_12 : 12,
+    space_14 : 14,
+    space_16 : 16,
+    space_17 : 17,
+    space_20 : 20,
+    space_24 : 24,
+    space_27 : 27,
+    space_32 : 32,
+    space_47 : 47,
+    space_76 : 76,
+    space_90 : 90.5,
+    space_148 : 148,
+    space_154 : 154,
+    space_184 : 184,
+};

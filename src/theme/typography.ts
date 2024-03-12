@@ -23,3 +23,15 @@ export const FONTSIZE: FontSize = {
     fsize_18: 18,
     fsize_24: 24,
 };
+
+interface FontFamily{
+    FrauncesBold:string,
+    QuicksandSemiBold:string,
+    QuicksandMedium:string
+}
+
+export const FONTFAMILY:FontFamily = {
+    FrauncesBold:'Fraunces_72pt-Bold',
+    QuicksandSemiBold:'Quicksand-SemiBold',
+    QuicksandMedium:'Quicksand-Medium',
+}

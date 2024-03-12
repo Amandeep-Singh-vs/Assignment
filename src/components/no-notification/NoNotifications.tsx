@@ -1,9 +1,9 @@
 // libraries
 import React from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, Text, View } from 'react-native'
 
-// assets
-var bell = require('../../assets/images/noNotificationBell.png')
+// constants
+import { bell } from '../../constants/notification-constants'
 
 // styles
 import {styles} from './noNotification-styles'
