@@ -7,33 +7,29 @@ import {
 } from 'react-native';
 
 // components
-import Navbar from './components/Navbar';
-import Notifications from './components/Notifications';
-import ActiveCards from './components/ActiveCards';
+import TopNav from './src/components/top-app-bar/TopNav';
+import Notifications from './src/screens/notifications-list/NotificationsList';
+import DActiveChallenges from './src/screens/d-active-challenges/DActiveChallenges';
 
 // common constant
-import { Notification,dActive } from './constants/screenChanger-constants';
+import { Notification,dActive } from './src/constants/screenChanger-constants';
+
+// Styles
+import {styles} from './src/theme/styles'
+import { COLORS } from './src/theme/color';
 
 /** App: {This function shows Navbar and the screens according to state value.} */
 function App(): React.JSX.Element {
-  const [screen,setScreen] = useState(true);
+  const [screen,setScreen] = useState(false);
   return (
     <View style={styles.mainContainer}>
-      {/* <StatusBar backgroundColor='white' barStyle={'dark-content'} /> */}
-      <Navbar title={`${screen?Notification:dActive}`}/>
+      <StatusBar backgroundColor={COLORS.bgcolor1} barStyle={'dark-content'} />
+      <TopNav title={`${screen?Notification:dActive}`}/>
       {
-        screen ? <Notifications/> : <ActiveCards/>
+        screen ? <Notifications/> : <DActiveChallenges/>
       }
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  mainContainer:{
-    flex:1,
-    flexDirection:'column',
-    backgroundColor:'white'
-  }
-});
 
 export default App;

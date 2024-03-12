@@ -1,0 +1,56 @@
+[
+    {
+      "id":"1",
+      "name":"Outer Ring",
+      "color":"#D72B6A"
+    },
+    {
+      "id":"2",
+      "name":"Focus",
+      "color":"#176E6D",
+      "dropShadow":4
+    },
+    {
+      "id":"3",
+      "name":"Scan",
+      "color":"#B96204"
+    },
+    {
+      "id":"4",
+      "name":"Square",
+      "color":"#176E6D",
+      "cardShadow":2
+    },
+    {
+      "id":"5",
+      "name":"Follow",
+      "color":"#292F36"
+    },
+    {
+        "id":"6",
+        "name":"Outer Ring",
+        "color":"#D72B6A"
+    },
+    {
+        "id":"7",
+        "name":"Focus",
+        "color":"#176E6D",
+        "dropShadow":4
+    },
+    {
+        "id":"8",
+        "name":"Scan",
+        "color":"#B96204"
+    },
+    {
+        "id":"9",
+        "name":"Square",
+        "color":"#176E6D",
+        "cardShadow":2
+    },
+    {
+        "id":"10",
+        "name":"Follow",
+        "color":"#292F36"
+    }
+]
