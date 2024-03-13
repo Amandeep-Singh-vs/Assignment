@@ -7,12 +7,13 @@ import { bell } from '../../constants/notification-constants'
 
 // styles
 import {styles} from './noNotification-styles'
+import { ResizeMode } from '../../constants/common-constants'
 
 /** NoNotifications: {This function displays the screen with no notifications message.} */
 const NoNotifications = () => {
   return (
     <View style={styles.container}>
-      <Image source={bell} style={styles.img}/>
+      <Image source={bell} resizeMode={ResizeMode.Contain} style={styles.img}/>
       <View style={styles.content}>
         <Text style={styles.txtBold}>No notifications yet!</Text>
         <Text style={styles.txtLight}>You have no notifications right now.{'\n'}Come back later.</Text>

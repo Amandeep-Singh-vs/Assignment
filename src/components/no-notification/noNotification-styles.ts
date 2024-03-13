@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 
 // theme
 import { SPACING } from './../../theme/spacing';
-import { FONTFAMILY, FONTSIZE } from "../../theme/typography";
+import { Typography } from "../../theme/typography";
 import { COLORS } from "../../theme/color";
 
 export const styles = StyleSheet.create({
@@ -14,8 +14,8 @@ export const styles = StyleSheet.create({
     marginHorizontal:SPACING.space_20,
   },
   img:{
-    height:154,
-    width:154,
+    height:SPACING.space_154,
+    width:SPACING.space_154,
     marginHorizontal:SPACING.space_90,
   },
   content:{
@@ -25,16 +25,16 @@ export const styles = StyleSheet.create({
   txtBold:{
     marginHorizontal:SPACING.space_4,
     marginBottom:SPACING.space_8,
-    fontFamily:FONTFAMILY.FrauncesBold,
+    fontFamily:Typography.secondary.bold,
     fontWeight:'700',
     textAlign:'center',
-    fontSize:FONTSIZE.fsize_24,
+    fontSize:SPACING.space_24,
     color:COLORS.tundora,
   },
   txtLight:{
-    fontFamily:FONTFAMILY.QuicksandMedium,
+    fontFamily:Typography.primary.medium,
     textAlign:'center',
-    fontSize:FONTSIZE.fsize_16,
+    fontSize:SPACING.space_16,
     color:COLORS.neutral700,
     textAlignVertical:'center'
   }

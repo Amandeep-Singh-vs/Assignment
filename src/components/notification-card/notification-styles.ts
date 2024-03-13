@@ -2,7 +2,7 @@
 import { StyleSheet } from "react-native";
 
 // theme
-import { FONTFAMILY, FONTSIZE } from "../../theme/typography";
+import { Typography } from "../../theme/typography";
 import { COLORS } from "../../theme/color";
 import { SPACING } from "../../theme/spacing";
 
@@ -24,20 +24,20 @@ export const styles = StyleSheet.create({
     width:56.2,
   },
   txt:{
-    flex:1,
+    flex:SPACING.space_1,
     marginRight:SPACING.space_8,
-    fontFamily:FONTFAMILY.QuicksandMedium,
+    fontFamily:Typography.primary.medium,
     color:COLORS.black,
-    fontSize:FONTSIZE.fsize_14,
+    fontSize:SPACING.space_14,
     textAlignVertical:'center',
   },
   timer:{
-    flex:1,
+    flex:SPACING.space_1,
     paddingHorizontal:SPACING.space_76,
   },
   timertxt:{
-    fontFamily:FONTFAMILY.QuicksandMedium,
-    fontSize:FONTSIZE.fsize_12,
+    fontFamily:Typography.primary.medium,
+    fontSize:SPACING.space_12,
     color:COLORS.neutral600,
     textAlignVertical:'center'
   },

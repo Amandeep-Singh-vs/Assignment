@@ -8,9 +8,3 @@ export const noChallenge = require('../assets/images/noChallenge.png')
 
 // timer buttons text
 export const buttonsData = ['2min', '4min', '8min']
-
-// linear gradient colors
-export const GRADIENTCOLORS={
-    gdcolor1:['#ffffff8f','#ffffff1f','#ffffff00'],
-    gdcolor2:['#ffffff00','#ffffffcc'],
-}

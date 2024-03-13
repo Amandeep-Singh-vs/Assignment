@@ -2,12 +2,16 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "src/assets/fonts/Fraunces_72pt-Regular.ttf",
-      "sha1": "a506fa25287843e30d74ad3fdd0b1519c1d89f42"
+      "path": "src/assets/fonts/Fraunces_9pt-Bold.ttf",
+      "sha1": "914b959b7d1993c680d4d7df6616111b560149dc"
     },
     {
-      "path": "src/assets/fonts/Fraunces_72pt-SemiBold.ttf",
-      "sha1": "326bcbbea15b5123af89c116e1bb56d45d59584b"
+      "path": "src/assets/fonts/Fraunces_9pt-Light.ttf",
+      "sha1": "6ec0b42406462e0c18ce41d7b909a5ac2b6a0e23"
+    },
+    {
+      "path": "src/assets/fonts/Fraunces_9pt-Regular.ttf",
+      "sha1": "eed036250a8f22b155382ad3839496e957083bcb"
     },
     {
       "path": "src/assets/fonts/Quicksand-Bold.ttf",

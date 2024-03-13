@@ -2,7 +2,7 @@
 import { StyleSheet } from "react-native";
 
 // theme
-import { FONTFAMILY, FONTSIZE } from "../../theme/typography";
+import { Typography } from "../../theme/typography";
 import { COLORS } from "../../theme/color";
 import { SPACING } from "../../theme/spacing";
 
@@ -13,18 +13,18 @@ export const styles = StyleSheet.create({
     paddingVertical:SPACING.space_16,
   },
   blank:{
-    height:24,
-    width:24,
+    height:SPACING.space_24,
+    width:SPACING.space_24,
   },
   img:{
-    height:24,
-    width:24,
+    height:SPACING.space_24,
+    width:SPACING.space_24,
   },
   txt:{
-    flex:1,
-    fontFamily:FONTFAMILY.FrauncesBold,
+    flex:SPACING.space_1,
+    fontFamily:Typography.secondary.bold,
     fontWeight:'700',
-    fontSize:FONTSIZE.fsize_18,
+    fontSize:SPACING.space_18,
     textAlign:'center',
     color:COLORS.neutral700,
     marginHorizontal:SPACING.space_16,

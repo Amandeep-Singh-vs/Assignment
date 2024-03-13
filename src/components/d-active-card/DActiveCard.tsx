@@ -11,9 +11,11 @@ import { Challenge } from '../../screens/d-active-challenges/DActiveChallenges';
 
 // theme
 import { SPACING } from '../../theme/spacing';
+import { BACKGROUNDGRADIENTS } from '../../theme/color';
 
 // constants
-import { GRADIENTCOLORS,buttonsData,outerRing,focus,scan,square,follow,noChallenge } from '../../constants/dActivechallenges-constants';
+import { buttonsData,outerRing,focus,scan,square,follow,noChallenge } from '../../constants/dActivechallenges-constants';
+import { ResizeMode } from '../../constants/common-constants';
 
 /** DActiveCard: {This function shows active cards according to the data given.} */
 const DActiveCard = ({data}:{data:Challenge}) => {
@@ -41,18 +43,18 @@ const DActiveCard = ({data}:{data:Challenge}) => {
     }
   return (
     <View style={styles.container}>
-        <ImageBackground source={getImage(data.name)} style={[styles.background,{elevation:data.dropShadow?data.dropShadow:0},{elevation:data.cardShadow?data.cardShadow:0}]}>
-            <LinearGradient colors={GRADIENTCOLORS.gdcolor1} locations={[0, 0.8792, 1]}>
+        <ImageBackground source={getImage(data.name)} resizeMode={ResizeMode.Contain} style={[styles.background,{elevation:data.dropShadow?data.dropShadow:0},{elevation:data.cardShadow?data.cardShadow:0}]}>
+            <LinearGradient colors={BACKGROUNDGRADIENTS.gdcolor1} locations={[0, 0.8792, 1]}>
                 <View style={styles.content}>
                     <Text style={[styles.txt,{color:data.color}]}>{data.name}</Text>
                 </View>
             </LinearGradient>
-            <LinearGradient colors={GRADIENTCOLORS.gdcolor2} locations={[0, 0.5]} style={{marginTop:SPACING.space_47}}>
+            <LinearGradient colors={BACKGROUNDGRADIENTS.gdcolor2} locations={[0, 0.5]} style={{marginTop:SPACING.space_47}}>
                 <View style={styles.btncontainer}>
                     {
-                        buttonsData.map((item,index)=>
+                        buttonsData.map((time,index)=>
                             <TouchableOpacity style={styles.btn} key={index}>
-                                <Text style={styles.btntxt}>{item}</Text>
+                                <Text style={styles.btntxt}>{time}</Text>
                             </TouchableOpacity>
                         )
                     }

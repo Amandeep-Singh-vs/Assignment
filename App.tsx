@@ -1,10 +1,6 @@
 // libraries
 import React, { useState } from 'react';
-import {
-  StatusBar,
-  StyleSheet,
-  View,
-} from 'react-native';
+import {StatusBar,View,} from 'react-native';
 
 // components
 import TopNav from './src/components/top-app-bar/TopNav';
@@ -20,7 +16,7 @@ import { COLORS } from './src/theme/color';
 
 /** App: {This function shows Navbar and the screens according to state value.} */
 function App(): React.JSX.Element {
-  const [screen,setScreen] = useState(true);
+  const [screen,setScreen] = useState(false);
   return (
     <View style={styles.mainContainer}>
       <StatusBar backgroundColor={COLORS.neutralWhite} barStyle={'dark-content'} />
