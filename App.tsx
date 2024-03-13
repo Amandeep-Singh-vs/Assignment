@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import {StatusBar,View,} from 'react-native';
 
 // components
-import TopNav from './src/components/top-app-bar/TopNav';
+import TopNav from './src/components/top-app-bar/TopAppBar';
 import Notifications from './src/screens/notifications-list/NotificationsList';
 import DActiveChallenges from './src/screens/d-active-challenges/DActiveChallenges';
 
