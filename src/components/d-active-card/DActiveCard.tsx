@@ -6,18 +6,19 @@ import { styles } from './dActiveCard-styles'
 
 import { Challenge } from '../../screens/d-active-challenges/DActiveChallenges'
 
-import { SPACING } from '../../theme/spacing'
 import { backgroundGradients } from '../../theme/color'
+import { SPACING } from '../../theme/spacing'
 
 import { buttonsData } from '../../constants/dActivechallenges-constants'
 import { ResizeMode } from '../../constants/common-constants'
+
 import { getImage } from '../../utils/common-utils'
 
 /** DActiveCard: {This function shows active cards according to the data given.} */
 const DActiveCard = ({ data }: { data: Challenge }) => {
   const renderButtons = () => {
     return buttonsData.map((time, index) => (
-      <TouchableOpacity style={styles.btn} key={index}>
+      <TouchableOpacity key={index} style={styles.btn}>
         <Text style={styles.btntxt}>{time}</Text>
       </TouchableOpacity>
     ))
@@ -25,8 +26,8 @@ const DActiveCard = ({ data }: { data: Challenge }) => {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={getImage(data.name)}
         resizeMode={ResizeMode.Contain}
+        source={getImage(data.name)}
         style={[styles.background, { elevation: data.dropShadow || data.cardShadow || 0 }]}>
         <LinearGradient colors={backgroundGradients.gdcolor1} locations={[0, 0.8792, 1]}>
           <View style={styles.content}>

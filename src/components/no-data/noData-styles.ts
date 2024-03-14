@@ -1,39 +1,39 @@
 import { StyleSheet } from 'react-native'
 
+import { COLORS } from '../../theme/color'
 import { SPACING } from '../../theme/spacing'
 import { Typography } from '../../theme/typography'
-import { COLORS } from '../../theme/color'
 
 export const styles = StyleSheet.create({
   container: {
-    flexDirection: 'column',
     alignItems: 'center',
-    marginTop: SPACING.space_184,
+    flexDirection: 'column',
     marginHorizontal: SPACING.space_20,
+    marginTop: SPACING.space_184,
   },
   image: {
     height: SPACING.space_154,
-    width: SPACING.space_154,
     marginHorizontal: SPACING.space_90,
+    width: SPACING.space_154,
   },
   subcontainer: {
-    width: '100%',
     marginTop: SPACING.space_27,
+    width: '100%',
   },
   title: {
-    marginHorizontal: SPACING.space_4,
-    marginBottom: SPACING.space_8,
-    fontFamily: Typography.secondary.bold,
-    fontWeight: '700',
-    textAlign: 'center',
-    fontSize: SPACING.space_24,
     color: COLORS.tundora,
+    fontFamily: Typography.secondary.bold,
+    fontSize: SPACING.space_24,
+    fontWeight: '700',
+    marginBottom: SPACING.space_8,
+    marginHorizontal: SPACING.space_4,
+    textAlign: 'center',
   },
   subTitle: {
-    fontFamily: Typography.primary.medium,
-    textAlign: 'center',
-    fontSize: SPACING.space_16,
     color: COLORS.neutral700,
+    fontFamily: Typography.primary.medium,
+    fontSize: SPACING.space_16,
+    textAlign: 'center',
     textAlignVertical: 'center',
   },
 })

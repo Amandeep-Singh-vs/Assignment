@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native'
 
-import { Typography } from '../../theme/typography'
 import { COLORS } from '../../theme/color'
 import { SPACING } from '../../theme/spacing'
+import { Typography } from '../../theme/typography'
 
 export const styles = StyleSheet.create({
   container: {
@@ -19,12 +19,12 @@ export const styles = StyleSheet.create({
     width: SPACING.space_24,
   },
   txt: {
+    color: COLORS.neutral700,
     flex: SPACING.space_1,
     fontFamily: Typography.secondary.bold,
-    fontWeight: '700',
     fontSize: SPACING.space_18,
-    textAlign: 'center',
-    color: COLORS.neutral700,
+    fontWeight: '700',
     marginHorizontal: SPACING.space_16,
+    textAlign: 'center',
   },
 })

@@ -1,16 +1,16 @@
 import { StyleSheet } from 'react-native'
 
-import { Typography } from '../../theme/typography'
 import { COLORS } from '../../theme/color'
 import { SPACING } from '../../theme/spacing'
+import { Typography } from '../../theme/typography'
 
 export const styles = StyleSheet.create({
   container: {
+    backgroundColor: COLORS.neutralWhite,
     flex: SPACING.space_1,
     flexDirection: 'column',
     justifyContent: 'center',
     marginBottom: SPACING.space_20,
-    backgroundColor: COLORS.neutralWhite,
   },
   background: {
     borderRadius: SPACING.space_8,
@@ -21,21 +21,21 @@ export const styles = StyleSheet.create({
   },
   txt: {
     fontFamily: Typography.secondary.bold,
-    fontWeight: '700',
     fontSize: SPACING.space_18,
-    textAlign: 'center',
+    fontWeight: '700',
     marginVertical: SPACING.space_8,
+    textAlign: 'center',
   },
   btncontainer: {
     flexDirection: 'row',
-    justifyContent: 'center',
     gap: 12,
+    justifyContent: 'center',
   },
   btn: {
-    marginVertical: SPACING.space_12,
     backgroundColor: COLORS.neutralWhite,
     borderRadius: SPACING.space_8,
     elevation: 3,
+    marginVertical: SPACING.space_12,
   },
   btntxt: {
     color: COLORS.neutral700,

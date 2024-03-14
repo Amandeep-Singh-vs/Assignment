@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlatList, ListRenderItem, View } from 'react-native'
+import { FlatList, ListRenderItem } from 'react-native'
 
 import DActiveCard from '../../components/d-active-card/DActiveCard'
 
@@ -19,9 +19,7 @@ import { styles } from './dActiveChallenges-styles'
 const DActiveChallenges = () => {
   const renderItem: ListRenderItem<Challenge> = ({ item }) => <DActiveCard data={item} />
   return (
-    <View style={styles.container}>
-      <FlatList scrollEnabled data={challenges} renderItem={renderItem} />
-    </View>
+      <FlatList scrollEnabled data={challenges} renderItem={renderItem} style={styles.container}/>
   )
 }
 

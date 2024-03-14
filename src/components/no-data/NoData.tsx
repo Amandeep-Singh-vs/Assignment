@@ -10,7 +10,7 @@ import { styles } from './noData-styles'
 const NoData = () => {
   return (
     <View style={styles.container}>
-      <Image source={bell} resizeMode={ResizeMode.Contain} style={styles.image} />
+      <Image resizeMode={ResizeMode.Contain} source={bell} style={styles.image} />
       <View style={styles.subcontainer}>
         <Text style={styles.title}>No notifications yet!</Text>
         <Text style={styles.subTitle}>

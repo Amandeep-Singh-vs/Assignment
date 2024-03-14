@@ -1,15 +1,15 @@
 import { StyleSheet } from 'react-native'
 
-import { Typography } from '../../theme/typography'
 import { COLORS } from '../../theme/color'
 import { SPACING } from '../../theme/spacing'
+import { Typography } from '../../theme/typography'
 
 export const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: SPACING.space_20,
-    paddingVertical: SPACING.space_17,
     borderBottomWidth: 0.7,
     borderColor: COLORS.neutral100,
+    paddingHorizontal: SPACING.space_20,
+    paddingVertical: SPACING.space_17,
   },
   content: {
     flexDirection: 'row',
@@ -17,16 +17,16 @@ export const styles = StyleSheet.create({
     marginBottom: SPACING.space_4,
   },
   img: {
+    height: SPACING.space_52,
     marginRight: SPACING.space_20,
-    height: 52.43,
-    width: 56.2,
+    width: SPACING.space_56,
   },
   txt: {
-    flex: SPACING.space_1,
-    marginRight: SPACING.space_8,
-    fontFamily: Typography.primary.medium,
     color: COLORS.black,
+    flex: SPACING.space_1,
+    fontFamily: Typography.primary.medium,
     fontSize: SPACING.space_14,
+    marginRight: SPACING.space_8,
     textAlignVertical: 'center',
   },
   timer: {
@@ -34,9 +34,9 @@ export const styles = StyleSheet.create({
     paddingHorizontal: SPACING.space_76,
   },
   timertxt: {
+    color: COLORS.neutral600,
     fontFamily: Typography.primary.medium,
     fontSize: SPACING.space_12,
-    color: COLORS.neutral600,
     textAlignVertical: 'center',
   },
   active: {

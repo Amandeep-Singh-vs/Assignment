@@ -1,7 +1,7 @@
 export enum ResizeMode {
-    Cover = 'cover',
-    Contain = 'contain',
-    Stretch = 'stretch',
-    Repeat = 'repeat',
     Center = 'center',
+    Contain = 'contain',
+    Cover = 'cover',
+    Repeat = 'repeat',
+    Stretch = 'stretch',
 }

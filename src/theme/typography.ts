@@ -1,10 +1,10 @@
 const typography = {
   primary: {
     bold: 'Quicksand-Bold',
-    semiBold: 'Quicksand-SemiBold',
     light: 'Quicksand-Light',
     medium: 'Quicksand-Medium',
     regular: 'Quicksand-Regular',
+    semiBold: 'Quicksand-SemiBold',
   },
   secondary: {
     bold: 'Fraunces_9pt-Bold',

@@ -1,25 +1,25 @@
-import moment from 'moment';
+import moment from 'moment'
 
 import {
-  outerRing,
+  ImageName,
   focus,
+  follow,
+  outerRing,
   scan,
   square,
-  follow,
-  ImageName,
 } from '../constants/dActivechallenges-constants'
 import { reflection, reminder, dActive } from '../constants/notification-constants'
 
 /** formatTimeAgo: {This function returns the difference between the timeStamps.} */
-export const formatTimeAgo = (notificationTime: any) => {
-  let currentTime = moment();
-  let timeDifference = moment.duration(currentTime.diff(notificationTime)).humanize();
-  return timeDifference;
+export const formatTimeAgo = (notificationTime: string): string => {
+  let currentTime = moment()
+  let timeDifference = moment.duration(currentTime.diff(notificationTime)).humanize()
+  return timeDifference
 }
 
 /** getImage: {This function returns the background image according to the name of challenge.} */
 export const getImage = (name: string) => {
-  let imageSrc: any = undefined
+  let imageSrc
   switch (name) {
     case ImageName.dActiveImg1:
       imageSrc = outerRing
@@ -42,13 +42,17 @@ export const getImage = (name: string) => {
 
 /** getImage: {This function returns an image according to type of image.} */
 export const getNotifyImage = (imageType: number) => {
-  let imageName = undefined
-  if (imageType == 0) {
-    imageName = reflection
-  } else if (imageType == 1) {
-    imageName = reminder
-  } else if (imageType == 2) {
-    imageName = dActive
+  let imageName
+  switch (imageType) {
+    case 0:
+      imageName = reflection
+      break
+    case 1:
+      imageName = reminder
+      break
+    case 2:
+      imageName = dActive
+      break
   }
   return imageName
 }
