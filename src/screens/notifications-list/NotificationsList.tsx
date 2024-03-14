@@ -9,7 +9,7 @@ import notifyData from '../../config/notifications_mockData.json'
 export interface notifyType {
   id: number
   message: string
-  time: string
+  timeStamp: string
   isSeen: boolean
   image: number
 }
@@ -25,7 +25,7 @@ const Notifications = () => {
         scrollEnabled
         data={notifyData}
         renderItem={renderItem}
-        keyExtractor={(item: notifyType, index: number) => item.id.toString()}
+        keyExtractor={(item: notifyType) => item.id.toString()}
         ListEmptyComponent={<NoData />}
       />
     </View>

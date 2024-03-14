@@ -16,7 +16,7 @@ import { COLORS } from './src/theme/color';
 
 /** App: {This function shows Navbar and the screens according to state value.} */
 function App(): React.JSX.Element {
-  const [screen,setScreen] = useState(false);
+  const [screen,setScreen] = useState(true);
   return (
     <View style={styles.mainContainer}>
       <StatusBar backgroundColor={COLORS.neutralWhite} barStyle={'dark-content'} />

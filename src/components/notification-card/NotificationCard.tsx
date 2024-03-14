@@ -21,7 +21,7 @@ const Notification = ({ data }: { data: notifyType }) => {
         <Text style={styles.txt}>{data.message}</Text>
       </View>
       <View style={styles.timer}>
-        <Text style={styles.timertxt}>{formatTimeAgo(data.time)}</Text>
+        <Text style={styles.timertxt}>{formatTimeAgo(data.timeStamp)} ago</Text>
       </View>
     </View>
   )
