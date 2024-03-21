@@ -33,6 +33,10 @@ const TabNavigator = () => {
         headerShown: false,
         tabBarActiveTintColor: COLORS.primary['50'],
         tabBarInactiveTintColor: COLORS.neutral['50'],
+        tabBarLabelStyle: {
+          fontSize: SPACING.space_12,
+          lineHeight: SPACING.space_12,
+        },
       }}>
       <Tab.Screen
         name="Home"
