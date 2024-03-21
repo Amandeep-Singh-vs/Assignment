@@ -1,17 +1,25 @@
-import {StyleSheet} from 'react-native';
-import {COLORS} from '../../theme';
+import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
-export const styles = StyleSheet.create({
+import {COLORS, SPACING, Typography} from '../../theme';
+
+interface IStyles {
+  container: ViewStyle;
+  title: TextStyle;
+}
+
+export const styles: IStyles = StyleSheet.create({
   container: {
-    borderWidth: 1,
-    borderColor: COLORS.neutral['700'],
-    borderRadius: 10,
-    paddingHorizontal: 12,
+    borderWidth: SPACING.space_1,
+    borderColor: COLORS.neutral['800'],
+    borderRadius: SPACING.space_10,
+    marginBottom: SPACING.space_12,
+    paddingHorizontal: SPACING.space_12,
   },
   title: {
-    fontSize: 16,
-    lineHeight: 22,
-    // color:'rgba(23, 23, 37, 1)'
-    marginBottom: 4,
+    color: COLORS.neutral['400'],
+    fontFamily: Typography.secondary.bold,
+    fontSize: SPACING.space_16,
+    lineHeight: SPACING.space_20,
+    marginVertical: SPACING.space_4,
   },
 });

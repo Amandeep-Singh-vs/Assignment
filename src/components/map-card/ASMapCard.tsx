@@ -1,7 +1,11 @@
 import React from 'react';
 import {Text, View} from 'react-native';
+
 import {Map} from '../../assets';
+import {SPACING} from '../../theme';
+
 import {styles} from './asMapCard-styles';
+
 const ASMapCard = () => {
   return (
     <View style={styles.container}>
@@ -12,7 +16,7 @@ const ASMapCard = () => {
         <View style={styles.subContainerLegend2} />
         <Text style={styles.subContainerTitle}>Less Affected</Text>
       </View>
-      <Map width="100%" height={300} />
+      <Map width="100%" height={SPACING.space_300} />
     </View>
   );
 };

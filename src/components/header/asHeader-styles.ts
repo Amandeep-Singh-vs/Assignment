@@ -1,22 +1,30 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
-import {COLORS, SPACING} from '../../theme';
+import {COLORS, SPACING, Typography} from '../../theme';
 
-export const styles = StyleSheet.create({
+interface IStyles {
+  container: ViewStyle;
+  icon: TextStyle;
+  title: TextStyle;
+}
+
+export const styles: IStyles = StyleSheet.create({
   container: {
+    backgroundColor: COLORS.white,
+    elevation: SPACING.space_10,
     flexDirection: 'row',
+    marginBottom: SPACING.space_1,
     paddingHorizontal: SPACING.space_24,
     paddingVertical: SPACING.space_16,
-    backgroundColor: COLORS.white,
+    shadowColor: COLORS.neutral['100'],
   },
-  img: {
-    height: SPACING.space_24,
-    width: SPACING.space_24,
+  icon: {
+    color: COLORS.neutral['100'],
   },
-  txt: {
-    // color: COLORS.neutral700,
+  title: {
+    color: COLORS.neutral['600'],
     flex: SPACING.space_1,
-    // fontFamily: Typography.secondary.bold,
+    fontFamily: Typography.secondary.bold,
     fontSize: SPACING.space_18,
     marginHorizontal: SPACING.space_16,
     textAlign: 'center',

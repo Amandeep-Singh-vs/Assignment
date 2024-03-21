@@ -1,43 +1,54 @@
-import {StyleSheet} from 'react-native';
-import {COLORS, SPACING} from '../../theme';
+import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
-export const styles = StyleSheet.create({
+import {COLORS, SPACING, Typography} from '../../theme';
+
+interface IStyles {
+  container: ViewStyle;
+  title: TextStyle;
+  subContainer: ViewStyle;
+  subContainerLegend1: ViewStyle;
+  subContainerLegend2: ViewStyle;
+  subContainerTitle: TextStyle;
+}
+
+export const styles: IStyles = StyleSheet.create({
   container: {
-    borderWidth: 1,
-    borderRadius: 10,
+    borderWidth: SPACING.space_1,
+    borderRadius: SPACING.space_10,
     borderColor: COLORS.neutral['700'],
-    marginBottom: 25,
-    paddingHorizontal: 12,
-    paddingVertical: 16,
+    marginBottom: SPACING.space_24,
+    paddingHorizontal: SPACING.space_12,
+    paddingVertical: SPACING.space_16,
   },
   title: {
-    lineHeight: 22,
-    fontSize: 17,
-    // fontFamily:'Fraunces'
+    color: COLORS.neutral['400'],
+    fontFamily: Typography.secondary.bold,
+    fontSize: SPACING.space_16,
+    lineHeight: SPACING.space_20,
   },
   subContainer: {
+    alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    alignItems: 'center',
-    marginBottom: 15,
+    marginBottom: SPACING.space_14,
   },
   subContainerLegend1: {
     backgroundColor: COLORS.primary['100'],
     height: SPACING.space_10,
-    width: SPACING.space_10,
     marginRight: SPACING.space_12,
+    width: SPACING.space_10,
   },
   subContainerLegend2: {
-    height: SPACING.space_10,
-    width: SPACING.space_10,
     backgroundColor: COLORS.primary['50'],
+    height: SPACING.space_10,
     marginRight: SPACING.space_12,
+    width: SPACING.space_10,
   },
   subContainerTitle: {
-    fontSize: 12,
-    lineHeight: 18,
-    // color:rgba(153, 153, 153, 1);
-    // fontFamily:'Fraunces'
-    marginRight: 20,
+    color: COLORS.neutral['100'],
+    fontFamily: Typography.secondary.semibold,
+    fontSize: SPACING.space_12,
+    lineHeight: SPACING.space_18,
+    marginRight: SPACING.space_20,
   },
 });

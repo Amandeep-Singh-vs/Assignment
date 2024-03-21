@@ -1,38 +1,58 @@
-import {StyleSheet} from 'react-native';
-import {SPACING} from '../../theme';
+import {ImageStyle, StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
-export const styles = StyleSheet.create({
+import {COLORS, SPACING, Typography} from '../../theme';
+
+interface IStyles {
+  container: ViewStyle;
+  progressContainer: ViewStyle;
+  progressContainerText: TextStyle;
+  detailContainer: ViewStyle;
+  detailContainerTitle: TextStyle;
+  detailSubContainerTitle: TextStyle;
+  containerImage: ImageStyle;
+}
+
+export const styles: IStyles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    borderWidth: SPACING.space_1,
-    borderColor: '#E4E4E4',
+    borderColor: COLORS.neutral['800'],
     borderRadius: SPACING.space_10,
-    marginBottom: SPACING.space_8,
+    borderWidth: SPACING.space_1,
+    flexDirection: 'row',
     justifyContent: 'space-between',
+    marginBottom: SPACING.space_8,
+    paddingVertical: SPACING.space_10,
+    overflow: 'visible',
   },
   progressContainer: {
     marginLeft: SPACING.space_20,
-    // marginRight: SPACING.space_12,
+    marginRight: SPACING.space_10,
+    color: COLORS.neutral['600'],
+  },
+  progressContainerText: {
+    color: COLORS.neutral['600'],
+    fontSize: SPACING.space_14,
+    fontFamily: Typography.secondary.bold,
+    lineHeight: SPACING.space_20,
   },
   detailContainer: {
     justifyContent: 'flex-end',
+    flex: SPACING.space_1,
   },
   detailContainerTitle: {
-    // fontFamily:'Fraunces'
+    color: COLORS.neutral['500'],
+    fontFamily: Typography.secondary.bold,
     fontSize: SPACING.space_16,
     lineHeight: SPACING.space_21,
-    // color:'background: rgba(21, 21, 34, 1)'
-    marginRight: SPACING.space_128,
   },
-  detailSubContainer: {},
   detailSubContainerTitle: {
-    // fontFamily:'Fraunces'
+    color: COLORS.neutral['100'],
+    fontFamily: Typography.secondary.semibold,
     fontSize: SPACING.space_12,
     lineHeight: SPACING.space_18,
-    // color:'background: rgba(153, 153, 153, 1)'
   },
   containerImage: {
     marginRight: SPACING.space_4,
     marginTop: SPACING.space_4,
+    opacity: SPACING.space_0,
   },
 });

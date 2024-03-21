@@ -1,31 +1,66 @@
-import {StyleSheet, Dimensions} from 'react-native';
+import {ImageStyle, StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
-const {width, height} = Dimensions.get('screen');
+import {COLORS, SPACING, Typography} from '../../theme';
 
-export const styles = StyleSheet.create({
+interface IStyles {
+  container: ViewStyle;
+  imageContainer: ViewStyle;
+  image: ImageStyle;
+  subContainer: ViewStyle;
+  dots: ViewStyle;
+  button: ViewStyle;
+  buttonText: TextStyle;
+  title: TextStyle;
+  content: TextStyle;
+}
+
+export const styles: IStyles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: SPACING.space_1,
     justifyContent: 'center',
-    // borderWidth: 5,
-    // borderColor: 'red',
-    paddingTop: 180,
-    paddingHorizontal: 25,
+    paddingHorizontal: SPACING.space_24,
+    paddingTop: SPACING.space_172,
   },
   imageContainer: {
-    paddingTop: 56,
-    // paddingHorizontal: 54,
-    borderRadius: 50,
-    borderColor: 'red',
-    borderWidth: 5,
     alignItems: 'center',
-    // marginHorizontal: 100,
+    borderRadius: SPACING.space_50,
+    paddingTop: SPACING.space_52,
+    marginBottom: SPACING.space_100,
   },
   image: {
-    width: 100,
-    height: 100,
+    width: SPACING.space_100,
+    height: SPACING.space_100,
+  },
+  subContainer: {
+    alignItems: 'center',
+    gap: SPACING.space_12,
   },
   dots: {
-    backgroundColor: 'red',
-    width: 30,
+    backgroundColor: COLORS.primary['100'],
+    width: SPACING.space_10,
+    height: SPACING.space_10,
+  },
+  button: {
+    paddingTop: SPACING.space_4,
+  },
+  buttonText: {
+    fontFamily: Typography.secondary.semibold,
+    fontSize: SPACING.space_12,
+    fontStyle: 'italic',
+    lineHeight: SPACING.space_16,
+  },
+  title: {
+    color: COLORS.neutral['400'],
+    fontFamily: Typography.primary.bold,
+    fontSize: SPACING.space_28,
+    lineHeight: SPACING.space_32,
+  },
+  content: {
+    color: COLORS.neutral['100'],
+    fontFamily: Typography.primary.semiBold,
+    fontSize: SPACING.space_16,
+    lineHeight: SPACING.space_24,
+    marginHorizontal: SPACING.space_12,
+    textAlign: 'center',
   },
 });

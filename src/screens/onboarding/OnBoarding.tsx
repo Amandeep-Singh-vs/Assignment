@@ -3,11 +3,12 @@ import {View} from 'react-native';
 
 import {ASOnBoardingCarousel} from '../../components';
 
-const OnBoarding = (props: any) => {
-  const {setLoginScreen} = props;
+import {styles} from './onBoarding-styles';
+
+const OnBoarding = () => {
   return (
-    <View style={{flex: 1}}>
-      <ASOnBoardingCarousel setLoginScreen={setLoginScreen} />
+    <View style={styles.container}>
+      <ASOnBoardingCarousel />
     </View>
   );
 };

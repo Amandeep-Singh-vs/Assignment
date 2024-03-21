@@ -1,14 +1,17 @@
 import React from 'react';
 import {View} from 'react-native';
-import ASHeader from '../../components/header/ASHeader';
 import WebView from 'react-native-webview';
+
+import ASHeader from '../../components/header/ASHeader';
 import {WEBVIEW_NEWS_SCREEN_URI} from '../../constants/common-constants';
+
+import {styles} from './news-styles';
 
 const News = () => {
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.container}>
       <ASHeader title="News" />
-      <View style={{flex: 1}}>
+      <View style={styles.subContainer}>
         <WebView
           source={{
             uri: WEBVIEW_NEWS_SCREEN_URI,

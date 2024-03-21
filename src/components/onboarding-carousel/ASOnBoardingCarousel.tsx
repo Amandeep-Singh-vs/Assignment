@@ -1,13 +1,16 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import {Fever, Cough, BreathingDifficulty} from '../../assets';
-import {styles} from './asOnBoardingCarousel';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootNativeStackParamsList} from '../../types/navigation-types';
 import {useNavigation} from '@react-navigation/native';
-const ASOnBoardingCarousel = (props: any) => {
-  const {setLoginScreen} = props;
+
+import {Fever, Cough, BreathingDifficulty} from '../../assets';
+import {slides} from '../../constants/common-constants';
+
+import {styles} from './asOnBoardingCarousel';
+
+const ASOnBoardingCarousel = () => {
   const navigation =
     useNavigation<NativeStackNavigationProp<RootNativeStackParamsList>>();
   const renderImage = (title: string) => {
@@ -36,54 +39,38 @@ const ASOnBoardingCarousel = (props: any) => {
   };
   const buttonLabel = (label: string) => {
     return (
-      <View>
-        <Text>{label}</Text>
+      <View style={styles.button}>
+        <Text style={styles.button}>{label}</Text>
       </View>
     );
   };
-  const slides = [
-    {
-      id: 1,
-      title: 'Fever',
-      description:
-        'He severity of COVID-19 symptoms can range from very mild to severe. Some people have no symptoms. People who are older or have existing chronic medical conditions.',
-    },
-    {
-      id: 2,
-      title: 'Cough',
-      description:
-        'Such as heart or lung disease or diabetis, may be at higher risk of serious illness. This is similar to what is seen with other respiratory illnesses, such influenza.',
-    },
-    {
-      id: 3,
-      title: 'Breathing Difficulty',
-      description:
-        'Contact your doctor or clinic right away if you have COVID-19 symptoms, you’ve been exposed to someone with COVID-19, or you live in or have traveled from an area with ongoing community spread of COVID-19.',
-    },
-  ];
+
   return (
     <View style={styles.container}>
       <AppIntroSlider
-        data={slides}
-        renderItem={({item}) => {
-          return (
-            <View>
-              <View style={styles.imageContainer}>
-                {renderImage(item.title)}
-              </View>
-              <Text>{item.title}</Text>
-              <Text>{item.description}</Text>
-            </View>
-          );
-        }}
         activeDotStyle={styles.dots}
-        showSkipButton
-        renderNextButton={() => buttonLabel('Next')}
-        renderSkipButton={() => buttonLabel('Skip')}
-        renderDoneButton={() => buttonLabel('Next')}
+        data={slides}
+        onSkip={() => {
+          navigation.navigate('Login');
+        }}
         onDone={() => {
           navigation.navigate('Login');
         }}
+        renderItem={({item}) => {
+          return (
+            <View style={styles.subContainer}>
+              <View style={styles.imageContainer}>
+                {renderImage(item.title)}
+              </View>
+              <Text style={styles.title}>{item.title}</Text>
+              <Text style={styles.content}>{item.description}</Text>
+            </View>
+          );
+        }}
+        renderNextButton={() => buttonLabel('Next')}
+        renderSkipButton={() => buttonLabel('Skip')}
+        renderDoneButton={() => buttonLabel('Next')}
+        showSkipButton
       />
     </View>
   );

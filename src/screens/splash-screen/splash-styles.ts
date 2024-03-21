@@ -1,25 +1,36 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
+
 import {COLORS, Typography, SPACING} from '../../theme';
 
-export const styles = StyleSheet.create({
+interface Istyles {
+  container: ViewStyle;
+  subContainer: ViewStyle;
+  title: TextStyle;
+  containerText: TextStyle;
+}
+
+export const styles: Istyles = StyleSheet.create({
   container: {
+    alignItems: 'center',
     flex: SPACING.space_1,
     justifyContent: 'space-between',
-    alignItems: 'center',
   },
   subContainer: {
     alignItems: 'center',
-    marginTop: '40%',
-    gap: SPACING.space_28,
+    gap: SPACING.space_32,
+    marginTop: '30%',
   },
   title: {
+    color: COLORS.primary['100'],
     fontFamily: Typography.primary.bold,
     fontSize: SPACING.space_28,
+    lineHeight: SPACING.space_32,
     textAlign: 'center',
-    color: COLORS.primary['50'],
   },
-  copyrightText: {
-    marginBottom: '10%',
+  containerText: {
     fontFamily: Typography.primary.semiBold,
+    fontSize: SPACING.space_14,
+    lineHeight: SPACING.space_18,
+    marginBottom: '10%',
   },
 });

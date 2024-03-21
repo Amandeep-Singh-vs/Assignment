@@ -1,16 +1,25 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, Text, TouchableOpacity, View} from 'react-native';
+import {
+  ActivityIndicator,
+  FlatList,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import Icon from 'react-native-vector-icons/Feather';
+
 import ASHeader from '../../components/header/ASHeader';
+import {ASCountryList} from '../../components';
 import {getDataFromURL} from '../../services';
 import {API_BASE_URL} from '../../constants/common-constants';
 import {COLORS, SPACING} from '../../theme';
-import Icon from 'react-native-vector-icons/Feather';
+
 import {styles} from './home-styles';
-import {ASCountryList} from '../../components';
 
 const Home = () => {
   const [apiData, setApiData] = useState([]);
   const [page, setPage] = useState<number>(1);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const LIMIT = 5;
   const totalDataLength = apiData.length;
   const startIdx = (page - 1) * LIMIT;
@@ -28,6 +37,7 @@ const Home = () => {
     const result = await getDataFromURL(API_BASE_URL);
     if (result.success) {
       setApiData(result.data);
+      setIsLoading(false);
     }
   };
 
@@ -47,26 +57,29 @@ const Home = () => {
             <Text style={styles.subTitle}>Top five countries</Text>
           </View>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity style={[styles.button]} onPress={handlePrevious}>
-              <Icon
-                name="chevron-left"
-                size={SPACING.space_10}
-                // color={page == 1 ? COLORS.shark['10'] : COLORS.neutral[600]}
-              />
+            <TouchableOpacity style={styles.button} onPress={handlePrevious}>
+              <Icon name="chevron-left" size={SPACING.space_14} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.button} onPress={handleNext}>
               <Icon
                 name="chevron-right"
-                size={SPACING.space_10}
-                color={COLORS.neutral[600]}
+                size={SPACING.space_14}
+                color={COLORS.neutral['600']}
               />
             </TouchableOpacity>
           </View>
         </View>
-        <FlatList
-          data={paginatedData}
-          renderItem={({item}) => renderFunction(item)}
-        />
+        {isLoading ? (
+          <ActivityIndicator
+            size={SPACING.space_50}
+            color={COLORS.primary['100']}
+          />
+        ) : (
+          <FlatList
+            data={paginatedData}
+            renderItem={({item}) => renderFunction(item)}
+          />
+        )}
       </View>
     </View>
   );

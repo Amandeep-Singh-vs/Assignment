@@ -7,6 +7,7 @@ const typography = {
   secondary: {
     bold: 'Fraunces_72pt-Bold',
     medium: 'Fraunces_72pt-Medium',
+    semibold: 'Quicksand-SemiBold',
   },
 };
 

@@ -1,4 +1,5 @@
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
+
 import {COLORS, SPACING, Typography} from '../../theme';
 
 interface IStyles {
@@ -25,7 +26,7 @@ export const styles: IStyles = StyleSheet.create({
     marginTop: SPACING.space_154,
   },
   title: {
-    color: COLORS.primary[50],
+    color: COLORS.primary['100'],
     fontFamily: Typography.primary.bold,
     fontSize: SPACING.space_28,
     lineHeight: SPACING.space_32,
@@ -40,10 +41,10 @@ export const styles: IStyles = StyleSheet.create({
     fontSize: SPACING.space_16,
     lineHeight: SPACING.space_24,
     fontFamily: Typography.primary.medium,
-    color: COLORS.neutral[200],
+    color: COLORS.neutral['200'],
   },
   inputArea: {
-    borderColor: COLORS.neutral[50],
+    borderColor: COLORS.neutral['50'],
     borderWidth: SPACING.space_1,
     borderRadius: SPACING.space_16,
     padding: SPACING.space_16,
@@ -52,21 +53,22 @@ export const styles: IStyles = StyleSheet.create({
     gap: SPACING.space_4,
   },
   signInButton: {
-    padding: SPACING.space_16,
-    backgroundColor: COLORS.primary[50],
+    backgroundColor: COLORS.primary['100'],
     borderRadius: SPACING.space_8,
+    padding: SPACING.space_16,
   },
   buttonLabel: {
+    color: COLORS.white,
     fontFamily: Typography.secondary.medium,
     fontSize: SPACING.space_16,
     lineHeight: SPACING.space_20,
     textAlign: 'center',
   },
   error: {
-    marginBottom: SPACING.space_4,
     color: COLORS.failure,
+    fontFamily: Typography.secondary.medium,
     fontSize: SPACING.space_16,
     lineHeight: SPACING.space_24,
-    fontFamily: Typography.secondary.medium,
+    marginBottom: SPACING.space_4,
   },
 });

@@ -1,17 +1,29 @@
-import {View, Text} from 'react-native';
 import React, {useEffect} from 'react';
+import {View, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {Covstats} from '../../assets';
-import {styles} from './splash-styles';
 import {RootNativeStackParamsList} from '../../types/navigation-types';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+import {Covstats} from '../../assets';
+
+import {styles} from './splash-styles';
 
 const Splash = () => {
+  const openApp = async () => {
+    const checker = await AsyncStorage.getItem('openFirstTime');
+    if (checker) {
+      navigation.navigate('Login');
+    } else {
+      await AsyncStorage.setItem('openFirstTime', 'true');
+      navigation.navigate('OnBoarding');
+    }
+  };
   const navigation =
     useNavigation<NativeStackNavigationProp<RootNativeStackParamsList>>();
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('OnBoarding');
+      openApp();
     }, 3000);
   });
   return (
@@ -20,7 +32,7 @@ const Splash = () => {
         <Covstats />
         <Text style={styles.title}>COVSTATS</Text>
       </View>
-      <Text style={styles.copyrightText}>
+      <Text style={styles.containerText}>
         © Copyright COVSTATS 2020. All rights reserved
       </Text>
     </View>
