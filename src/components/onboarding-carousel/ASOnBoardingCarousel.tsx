@@ -3,8 +3,13 @@ import {Text, View} from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import {Fever, Cough, BreathingDifficulty} from '../../assets';
 import {styles} from './asOnBoardingCarousel';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootNativeStackParamsList} from '../../types/navigation-types';
+import {useNavigation} from '@react-navigation/native';
 const ASOnBoardingCarousel = (props: any) => {
   const {setLoginScreen} = props;
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootNativeStackParamsList>>();
   const renderImage = (title: string) => {
     let image;
     switch (title) {
@@ -75,9 +80,9 @@ const ASOnBoardingCarousel = (props: any) => {
         showSkipButton
         renderNextButton={() => buttonLabel('Next')}
         renderSkipButton={() => buttonLabel('Skip')}
-        renderDoneButton={() => buttonLabel('Done')}
+        renderDoneButton={() => buttonLabel('Next')}
         onDone={() => {
-          setLoginScreen(true);
+          navigation.navigate('Login');
         }}
       />
     </View>

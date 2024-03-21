@@ -14,6 +14,8 @@ const App = () => {
       <NavigationContainer>
         <StackNavigator />
       </NavigationContainer>
+      {/* <Login /> */}
+      {/* <TabNavigator /> */}
     </SafeAreaView>
   );
 };

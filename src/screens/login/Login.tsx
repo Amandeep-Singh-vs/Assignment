@@ -7,9 +7,11 @@ import {
   KeyboardAvoidingView,
   ScrollView,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Covstats} from '../../assets';
 import {styles} from './login-styles';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
+import auth from '@react-native-firebase/auth';
 
 const Login = () => {
   const [number, setNumber] = useState<string>('');
@@ -36,6 +38,25 @@ const Login = () => {
     setNumber('');
     setPassword('');
   };
+  useEffect(() => {
+    GoogleSignin.configure({
+      webClientId:
+        '255056555371-d2b7tvtte9rhvauosdgko5lp6ai51ndk.apps.googleusercontent.com',
+      offlineAccess: true,
+    });
+  }, []);
+  async function onGoogleButtonPress() {
+    try {
+      await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
+      const {idToken} = await GoogleSignin.signIn();
+      console.log(idToken);
+      Alert.alert('Login Successful');
+      const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+      return auth().signInWithCredential(googleCredential);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <View style={styles.container}>
       {/* <ScrollView showsVerticalScrollIndicator={false}> */}
@@ -73,7 +94,9 @@ const Login = () => {
           {passwordError ? 'Invalid password' : ' '}
         </Text>
       </View>
-      <TouchableOpacity style={styles.signInButton} onPress={handleSubmit}>
+      <TouchableOpacity
+        style={styles.signInButton}
+        onPress={onGoogleButtonPress}>
         <Text style={styles.buttonLabel}>{buttonLabel}</Text>
       </TouchableOpacity>
       {/* </KeyboardAvoidingView> */}
