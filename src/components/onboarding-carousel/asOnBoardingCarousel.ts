@@ -25,7 +25,6 @@ export const styles: IStyles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: SPACING.space_50,
     paddingTop: SPACING.space_52,
-    marginBottom: SPACING.space_100,
   },
   image: {
     width: SPACING.space_100,

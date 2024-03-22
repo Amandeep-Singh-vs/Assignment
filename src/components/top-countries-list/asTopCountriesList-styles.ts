@@ -12,7 +12,7 @@ export const styles: IStyles = StyleSheet.create({
     borderWidth: SPACING.space_1,
     borderColor: COLORS.neutral['800'],
     borderRadius: SPACING.space_10,
-    marginBottom: SPACING.space_12,
+    marginBottom: SPACING.space_128,
     paddingHorizontal: SPACING.space_12,
   },
   title: {

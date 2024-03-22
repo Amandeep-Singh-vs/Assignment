@@ -1,9 +1,10 @@
 import React from 'react';
-import {View} from 'react-native';
+import {ActivityIndicator, View} from 'react-native';
 import WebView from 'react-native-webview';
 
 import ASHeader from '../../components/header/ASHeader';
 import {WEBVIEW_EDUCATION_SCREEN_URI} from '../../constants/common-constants';
+import {COLORS, SPACING} from '../../theme';
 
 import {styles} from './education-styles';
 
@@ -16,6 +17,13 @@ const Education = () => {
           source={{
             uri: WEBVIEW_EDUCATION_SCREEN_URI,
           }}
+          startInLoadingState={true}
+          renderLoading={() => (
+            <ActivityIndicator
+              size={SPACING.space_50}
+              color={COLORS.primary['100']}
+            />
+          )}
         />
       </View>
     </View>

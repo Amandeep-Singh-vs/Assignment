@@ -11,7 +11,9 @@ const Map = () => {
   return (
     <View style={styles.container}>
       <ASHeader title="World Wide map" />
-      <ScrollView style={styles.subContainer}>
+      <ScrollView
+        style={styles.subContainer}
+        showsVerticalScrollIndicator={false}>
         <ASMapCard />
         <ASTopCountriesList />
       </ScrollView>

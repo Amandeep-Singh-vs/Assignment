@@ -9,6 +9,5 @@ export const styles = StyleSheet.create({
   },
   subContainer: {
     flex: SPACING.space_1,
-    marginTop: SPACING.space_14,
   },
 });

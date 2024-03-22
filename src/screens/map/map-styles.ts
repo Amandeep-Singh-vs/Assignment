@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
   subContainer: {
     backgroundColor: COLORS.white,
     paddingHorizontal: SPACING.space_14,
-    marginVertical: SPACING.space_40,
+    paddingTop: SPACING.space_40,
+    paddingBottom: SPACING.space_40,
   },
 });

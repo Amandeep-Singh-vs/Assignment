@@ -23,8 +23,8 @@ const ASCountryList = ({item}) => {
         </Text>
       </View>
       <View style={styles.casesDataContainer}>
-        <Text style={styles.casesData} numberOfLines={1} ellipsizeMode="tail">
-          {cases}
+        <Text style={styles.casesData}>
+          {cases > 100000 ? Math.floor(cases / 1000) + ' k' : cases}
         </Text>
         <View style={styles.icon}>
           <Icon

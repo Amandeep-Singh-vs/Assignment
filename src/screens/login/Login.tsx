@@ -16,6 +16,7 @@ import {RootNativeStackParamsList} from '../../types/navigation-types';
 import {useNavigation} from '@react-navigation/native';
 
 import {Covstats} from '../../assets';
+import {SPACING} from '../../theme';
 
 import {styles} from './login-styles';
 
@@ -32,11 +33,17 @@ const Login = () => {
     const numberRegexExpression = new RegExp(/^(?:\+)?[7-9][0-9]{9}$/);
     if (!numberRegexExpression.test(number)) {
       setNumberError(true);
+      setTimeout(() => {
+        setNumberError(false);
+      }, 3000);
       return;
     }
     const passwordRegexExpression = /^(?=.*[A-Za-z])(?=.*[^A-Za-z0-9]).+$/;
     if (!passwordRegexExpression.test(password)) {
       setPasswordError(true);
+      setTimeout(() => {
+        setPasswordError(false);
+      }, 3000);
       return;
     }
     if (numberError || passwordError) return;
@@ -67,45 +74,43 @@ const Login = () => {
   }
   return (
     <View style={styles.container}>
-      <KeyboardAvoidingView behavior="position" keyboardVerticalOffset={10}>
-        <ScrollView>
-          <View style={styles.subContainer}>
-            <Covstats />
-            <Text style={styles.title}>COVSTATS</Text>
-          </View>
-          <View style={styles.numberContainer}>
-            <Text style={styles.inputLabel}>Mobile Number</Text>
-            <TextInput
-              keyboardType="phone-pad"
-              style={styles.inputArea}
-              placeholder="Enter your mobile number"
-              value={number}
-              onChangeText={setNumber}
-            />
-            <Text style={styles.error}>
-              {numberError ? 'Invalid mobile number' : ' '}
-            </Text>
-          </View>
-          <View style={styles.passwordContainer}>
-            <Text style={styles.inputLabel}>Password</Text>
-            <TextInput
-              secureTextEntry
-              style={styles.inputArea}
-              placeholder="Enter your mobile number"
-              value={password}
-              onChangeText={setPassword}
-            />
-            <Text style={styles.error}>
-              {passwordError ? 'Invalid password' : ' '}
-            </Text>
-          </View>
-          <TouchableOpacity
-            style={styles.signInButton}
-            onPress={number && password ? handleSubmit : onGoogleButtonPress}>
-            <Text style={styles.buttonLabel}>{buttonLabel}</Text>
-          </TouchableOpacity>
-        </ScrollView>
-      </KeyboardAvoidingView>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.subContainer}>
+          <Covstats />
+          <Text style={styles.title}>COVSTATS</Text>
+        </View>
+        <View style={styles.numberContainer}>
+          <Text style={styles.inputLabel}>Mobile Number</Text>
+          <TextInput
+            keyboardType="phone-pad"
+            style={styles.inputArea}
+            placeholder="Enter your mobile number"
+            value={number}
+            onChangeText={setNumber}
+          />
+          <Text style={styles.error}>
+            {numberError ? 'Invalid mobile number' : ' '}
+          </Text>
+        </View>
+        <View style={styles.passwordContainer}>
+          <Text style={styles.inputLabel}>Password</Text>
+          <TextInput
+            secureTextEntry
+            style={styles.inputArea}
+            placeholder="Enter your password"
+            value={password}
+            onChangeText={setPassword}
+          />
+          <Text style={styles.error}>
+            {passwordError ? 'Invalid password' : ' '}
+          </Text>
+        </View>
+        <TouchableOpacity
+          style={styles.signInButton}
+          onPress={number && password ? handleSubmit : onGoogleButtonPress}>
+          <Text style={styles.buttonLabel}>{buttonLabel}</Text>
+        </TouchableOpacity>
+      </ScrollView>
     </View>
   );
 };

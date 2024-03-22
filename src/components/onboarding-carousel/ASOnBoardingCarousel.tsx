@@ -7,6 +7,7 @@ import {useNavigation} from '@react-navigation/native';
 
 import {Fever, Cough, BreathingDifficulty} from '../../assets';
 import {slides} from '../../constants/common-constants';
+import {SPACING} from '../../theme';
 
 import {styles} from './asOnBoardingCarousel';
 
@@ -17,20 +18,16 @@ const ASOnBoardingCarousel = () => {
     let image;
     switch (title) {
       case 'Fever':
-        image = (
-          <Fever width={styles.image.width} height={styles.image.height} />
-        );
+        image = <Fever width={SPACING.space_248} height={SPACING.space_248} />;
         break;
       case 'Cough':
-        image = (
-          <Cough width={styles.image.width} height={styles.image.height} />
-        );
+        image = <Cough width={SPACING.space_248} height={SPACING.space_248} />;
         break;
       case 'Breathing Difficulty':
         image = (
           <BreathingDifficulty
-            width={styles.image.width}
-            height={styles.image.height}
+            width={SPACING.space_248}
+            height={SPACING.space_248}
           />
         );
         break;
