@@ -37,7 +37,7 @@ const ASOnBoardingCarousel = () => {
   const buttonLabel = (label: string) => {
     return (
       <View style={styles.button}>
-        <Text style={styles.button}>{label}</Text>
+        <Text style={styles.buttonText}>{label}</Text>
       </View>
     );
   };

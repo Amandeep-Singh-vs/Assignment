@@ -23,8 +23,8 @@ export const styles: IStyles = StyleSheet.create({
   },
   imageContainer: {
     alignItems: 'center',
-    borderRadius: SPACING.space_50,
-    paddingTop: SPACING.space_52,
+    borderRadius: SPACING.space_100,
+    marginBottom: SPACING.space_52,
   },
   image: {
     width: SPACING.space_100,
@@ -40,9 +40,10 @@ export const styles: IStyles = StyleSheet.create({
     height: SPACING.space_10,
   },
   button: {
-    paddingTop: SPACING.space_4,
+    paddingTop: SPACING.space_16,
   },
   buttonText: {
+    color: COLORS.neutral['600'],
     fontFamily: Typography.secondary.semibold,
     fontSize: SPACING.space_12,
     fontStyle: 'italic',

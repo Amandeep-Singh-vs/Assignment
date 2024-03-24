@@ -3,16 +3,17 @@ import {View, Text, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import {COLORS, SPACING} from '../../theme';
+import {IApiData} from '../../types';
+import {thresholdCases} from '../../constants';
 
 import {styles} from './asCountryList';
 
-const ASCountryList = ({item}) => {
+const ASCountryList = ({item}: {item: IApiData}) => {
   const {country, countryInfo, cases} = item;
   const {flag} = countryInfo;
-  const threshold = 50000;
-  let iconName = cases > threshold ? 'chevron-up' : 'chevron-down';
+  let iconName = cases > thresholdCases ? 'chevron-up' : 'chevron-down';
   let highlightColor =
-    cases > threshold ? COLORS.primary['100'] : COLORS.success['50'];
+    cases > thresholdCases ? COLORS.primary['100'] : COLORS.success['50'];
 
   return (
     <View style={styles.container}>

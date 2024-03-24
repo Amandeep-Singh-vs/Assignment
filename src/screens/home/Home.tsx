@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {
   ActivityIndicator,
+  Alert,
   FlatList,
   Text,
   TouchableOpacity,
@@ -11,16 +12,16 @@ import Icon from 'react-native-vector-icons/Feather';
 import ASHeader from '../../components/header/ASHeader';
 import {ASCountryList} from '../../components';
 import {getDataFromURL} from '../../services';
-import {API_BASE_URL} from '../../constants/common-constants';
+import {IApiData} from '../../types';
+import {API_BASE_URL, PAGE_LIMIT as LIMIT} from '../../constants';
 import {COLORS, SPACING} from '../../theme';
 
 import {styles} from './home-styles';
 
 const Home = () => {
-  const [apiData, setApiData] = useState([]);
+  const [apiData, setApiData] = useState<IApiData[]>([]);
   const [page, setPage] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const LIMIT = 5;
   const totalDataLength = apiData.length;
   const startIdx = (page - 1) * LIMIT;
   const endIdx = Math.min(startIdx + Number(LIMIT), totalDataLength);
@@ -38,13 +39,16 @@ const Home = () => {
     if (result.success) {
       setApiData(result.data);
       setIsLoading(false);
+    } else {
+      Alert.alert('Something went wrong!!!');
+      setIsLoading(false);
     }
   };
 
   useEffect(() => {
     getApiData();
   }, []);
-  const renderFunction = item => {
+  const renderFunction = (item: IApiData) => {
     return <ASCountryList item={item} />;
   };
   return (

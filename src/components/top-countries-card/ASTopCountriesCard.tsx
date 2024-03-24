@@ -3,13 +3,14 @@ import {View, Text} from 'react-native';
 import {Circle} from 'react-native-progress';
 import Icon from 'react-native-vector-icons/Feather';
 
+import {IApiData as ITopCountriesCardProps} from '../../types';
+import {LIMIT} from '../../constants';
 import {COLORS, SPACING} from '../../theme';
 
 import {styles} from '../top-countries-card/asTopCountriesCard-styles';
 
-const ASTopCountriesCard = (props: any) => {
+const ASTopCountriesCard = (props: ITopCountriesCardProps) => {
   const {country, cases, recovered} = props;
-  const LIMIT = 300000;
   const highlightColor =
     cases > LIMIT ? COLORS.primary['100'] : COLORS.success['50'];
   return (

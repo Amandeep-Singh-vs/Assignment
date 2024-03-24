@@ -42,3 +42,9 @@ export const slides = [
       'Contact your doctor or clinic right away if you have COVID-19 symptoms, you’ve been exposed to someone with COVID-19, or you live in or have traveled from an area with ongoing community spread of COVID-19.',
   },
 ];
+
+export const LIMIT = 300000;
+export const PAGE_LIMIT = 5;
+export const numberRegexExpression = new RegExp(/^(?:\+)?[7-9][0-9]{9}$/);
+export const passwordRegexExpression = /^(?=.*[A-Za-z])(?=.*[^A-Za-z0-9]).+$/;
+export const thresholdCases = 50000;

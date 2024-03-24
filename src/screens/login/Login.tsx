@@ -5,7 +5,6 @@ import {
   TextInput,
   TouchableOpacity,
   Alert,
-  KeyboardAvoidingView,
   ScrollView,
 } from 'react-native';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
@@ -16,7 +15,7 @@ import {RootNativeStackParamsList} from '../../types/navigation-types';
 import {useNavigation} from '@react-navigation/native';
 
 import {Covstats} from '../../assets';
-import {SPACING} from '../../theme';
+import {numberRegexExpression, passwordRegexExpression} from '../../constants';
 
 import {styles} from './login-styles';
 
@@ -30,7 +29,6 @@ const Login = () => {
   const buttonLabel =
     number.trim() && password.trim() ? 'Submit' : 'Sign In with Google';
   const handleSubmit = () => {
-    const numberRegexExpression = new RegExp(/^(?:\+)?[7-9][0-9]{9}$/);
     if (!numberRegexExpression.test(number)) {
       setNumberError(true);
       setTimeout(() => {
@@ -38,7 +36,6 @@ const Login = () => {
       }, 3000);
       return;
     }
-    const passwordRegexExpression = /^(?=.*[A-Za-z])(?=.*[^A-Za-z0-9]).+$/;
     if (!passwordRegexExpression.test(password)) {
       setPasswordError(true);
       setTimeout(() => {
@@ -107,7 +104,11 @@ const Login = () => {
         </View>
         <TouchableOpacity
           style={styles.signInButton}
-          onPress={number && password ? handleSubmit : onGoogleButtonPress}>
+          onPress={
+            number.trim() && password.trim()
+              ? handleSubmit
+              : onGoogleButtonPress
+          }>
           <Text style={styles.buttonLabel}>{buttonLabel}</Text>
         </TouchableOpacity>
       </ScrollView>

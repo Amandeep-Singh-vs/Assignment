@@ -3,7 +3,7 @@ import {ActivityIndicator, View} from 'react-native';
 import WebView from 'react-native-webview';
 
 import ASHeader from '../../components/header/ASHeader';
-import {WEBVIEW_NEWS_SCREEN_URI} from '../../constants/common-constants';
+import {WEBVIEW_NEWS_SCREEN_URI} from '../../constants';
 import {COLORS, SPACING} from '../../theme';
 
 import {styles} from './news-styles';
